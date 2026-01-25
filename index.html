@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Integrated Construction Property Services</title>
+  <title>Construction Advisory Services</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="End-to-end construction, valuation, interiors, monitoring and green building services across Andhra Pradesh and Telangana.">
 
@@ -75,13 +75,7 @@
       }
     }
 
-    .header-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: 1.25rem;
-    }
+    
 
     .brand {
       display: flex;
@@ -541,35 +535,151 @@
       transform: translateY(-2px);
       box-shadow: 0 12px 25px rgba(15, 23, 42, 0.18);
     }
+
+/* White background for header-top */
+.header-top {
+    background: #ffffff !important;
+    padding: 1rem;
+    border-radius: var(--radius);
+    color: var(--text); /* Dark text on white */
+}
+
+/* Hamburger icon */
+.hamburger {
+    display: none; /* Hidden on desktop */
+    flex-direction: column;
+    gap: 4px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 4px;
+}
+.hamburger span {
+    width: 24px;
+    height: 3px;
+    background: var(--text);
+    border-radius: 3px;
+    transition: 0.2s;
+}
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 1000;
+    padding: 80px 20px 20px;
+}
+.mobile-menu.active {
+    right: 0;
+}
+.menu-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--text);
+}
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.menu-link {
+    display: block;
+    padding: 16px;
+    color: var(--text);
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background 0.2s;
+    text-decoration: none;
+}
+.menu-link:hover {
+    background: var(--bg);
+}
+
+/* Overlay */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+    z-index: 999;
+}
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+    .header-badges {
+        display: none;
+    }
+}
+
   </style>
 </head>
 <body>
-  <div class="page">
-    <header>
-      <div class="header-top">
+<div class="header-top">
         <div class="brand">
-          <div class="brand-title">Integrated Construction Services</div>
+          <div class="brand-title">Construction Advisory Services</div>
           <div class="brand-subtitle">End-to-end solutions across Andhra Pradesh & Telangana</div>
         </div>
-        <div class="header-badges">
-          <span class="badge">Licensed</span>
-          <span class="badge">20 Years Experience</span>
-          <span class="badge">On-Time Delivery</span>
-          <span class="badge">Cost Effective</span>
-        </div>
+        <!-- Hamburger button (visible on mobile) -->
+  	<button class="hamburger" onclick="toggleMenu()">
+    		<span></span>
+    		<span></span>
+    		<span></span>
+  	</button>
+  	<!-- Desktop badges (hidden on mobile) -->
+  	<div class="header-badges">
+    	<!-- Your existing badges here -->
+  	</div>
+
       </div>
+  <div class="page">
+
+    <header>
+      
 
       <div class="hero">
         <div>
-          <h1 class="hero-title">Transform Your Vision into Reality</h1>
+          <!-- <h1 class="hero-title">Transform Your Vision into Reality</h1>-->
+	  <img src="bannerImage1.jpeg" alt="Transform Your Vision into Reality" width="100%" height="100%">
           <p class="hero-text">
             Complete solutions from land survey to green building certification, interiors and professional valuation – a single partner for seamless turnkey delivery.
           </p>
           <div class="hero-list">
-            <span class="hero-chip">Plot Sourcing &amp; Survey</span>
-            <span class="hero-chip">A–Z Construction</span>
-            <span class="hero-chip">Premium Interiors</span>
-            <span class="hero-chip">Valuation &amp; Monitoring</span>
+          <span class="badge">Licensed</span>
+          <span class="badge">20 Years Experience</span>
+          <span class="badge">On-Time Delivery</span>
+          <span class="badge">Cost Effective</span>
           </div>
           <div class="hero-actions">
             <button class="btn-primary" onclick="document.getElementById('cta-form').scrollIntoView({ behavior: 'smooth' })">
@@ -580,8 +690,7 @@
             Serving Telangana, Andhra Pradesh regions
           </div>
         </div>
-
-        <aside class="hero-card">
+	<aside class="hero-card">
           <div class="hero-card-title">Why clients choose us</div>
           <ul class="hero-card-list">
             <li>Single-point accountability from concept to completion</li>
@@ -590,8 +699,27 @@
             <li>Green building focus for lower lifetime operating costs</li>
           </ul>
         </aside>
+        
       </div>
+
     </header>
+
+
+	<!-- Mobile menu (add after header-top) -->
+	<nav class="mobile-menu" id="mobileMenu">
+  	<button class="menu-close" onclick="toggleMenu()">&times;</button>
+  		<ul class="menu-list">
+   	<li class="menu-item"><a class="menu-link" href="#valuation" onclick="scrollToSection('valuation'); toggleMenu();">Valuation</a></li>
+    	<li class="menu-item"><a class="menu-link" href="#monitoring" onclick="scrollToSection('monitoring'); toggleMenu();">Monitoring</a></li>
+    	<li class="menu-item"><a class="menu-link" href="#execution" onclick="scrollToSection('execution'); toggleMenu();">Execution</a></li>
+    	<li class="menu-item"><a class="menu-link" href="#supply" onclick="scrollToSection('supply'); toggleMenu();">Supply</a></li>
+    	<li class="menu-item"><a class="menu-link" href="#sustainability" onclick="scrollToSection('sustainability'); toggleMenu();">Sustainability</a></li>
+    	<li class="menu-item"><a class="menu-link" href="#survey" onclick="scrollToSection('survey'); toggleMenu();">Survey</a></li>
+    	<li class="menu-item"><a class="menu-link" href="#interiors" onclick="scrollToSection('interiors'); toggleMenu();">Interiors</a></li>
+  	</ul>
+	</nav>
+	<!-- Menu overlay -->
+	<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
 
     <!-- Core Services -->
     <section id="services">
@@ -602,7 +730,7 @@
 
       <div class="grid grid-sm-2 grid-md-3">
         <!-- Valuation card -->
-        <article class="card card-clickable" onclick="openPopup('valuation')">
+        <article id="valuation" class="card card-clickable" onclick="openPopup('valuation')">
           <div class="card-header">
             <div class="card-kicker">Valuation</div>
             <h3 class="card-title">Flat &amp; House Valuation</h3>
@@ -613,7 +741,7 @@
         </article>
 
         <!-- Monitoring card -->
-        <article class="card card-clickable" onclick="openPopup('monitoring')">
+        <article id="monitoring" class="card card-clickable" onclick="openPopup('monitoring')">
           <div class="card-header">
             <div class="card-kicker">Monitoring</div>
             <h3 class="card-title">Construction Monitoring</h3>
@@ -624,7 +752,7 @@
         </article>
 
         <!-- Execution card -->
-        <article class="card card-clickable" onclick="openPopup('execution')">
+        <article id="execution" class="card card-clickable" onclick="openPopup('execution')">
           <div class="card-header">
             <div class="card-kicker">Execution</div>
             <h3 class="card-title">Building Construction</h3>
@@ -635,7 +763,7 @@
         </article>
 
         <!-- Supply -->
-        <article class="card">
+        <article id="supply" class="card">
           <div class="card-header">
             <div class="card-kicker">Supply</div>
             <h3 class="card-title">Building Materials</h3>
@@ -646,7 +774,7 @@
         </article>
 
         <!-- Sustainability -->
-        <article class="card">
+        <article id="sustainability" class="card">
           <div class="card-header">
             <div class="card-kicker">Sustainability</div>
             <h3 class="card-title">Green Building Advisory</h3>
@@ -657,7 +785,7 @@
         </article>
 
         <!-- Survey -->
-        <article class="card">
+        <article id="survey" class="card">
           <div class="card-header">
             <div class="card-kicker">Survey</div>
             <h3 class="card-title">Land Survey &amp; Total Station</h3>
@@ -672,7 +800,7 @@
     <!-- Detailed Service Cards -->
     <section>
       <div class="grid grid-sm-2">
-        <article class="card card-split">
+        <article id="interiors" class="card card-split">
           <div class="card-split-main">
             <div class="card-header">
               <div class="card-kicker">Interiors</div>
@@ -724,10 +852,11 @@
 
       <div class="ventures-grid">
         <div class="venture-card">
-          <div class="venture-title">Jangon Pradise</div>
+          <div class="venture-title">SVG Flora</div> Forms & Resorts
           <p>
-            Agriculture land with pattadar passbooks devide into 121syd to 600syd. located at prime location which is just 1km from warangal to Vijayawada road. sorounded by multiple ventures. clear title with 12 years maintenance.
+            SVG Flora Farms & Resorts offers a unique blend of farmland investment and resort-style living across 100 acres in Jangaon. With a 5-acre premium resort, modern amenities, and nature-rich surroundings, it’s the perfect choice for peaceful getaways, smart investments, and a wholesome lifestyle.
           </p>
+	<a href="SVG Flora Farms & Resorts Brochure.pdf">click here for Brochure</a>
         </div>
 
         <div class="venture-card">
@@ -858,6 +987,22 @@
       document.getElementById('popupOverlay').style.display = 'none';
       document.getElementById('popupPane').style.display = 'none';
     }
+function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('menuOverlay');
+    const hamburger = document.querySelector('.hamburger');
+    menu.classList.toggle('active');
+    overlay.classList.toggle('active');
+    hamburger.classList.toggle('active');
+}
+
+function scrollToSection(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
   </script>
 </body>
 </html>
