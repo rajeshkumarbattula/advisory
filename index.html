@@ -642,7 +642,21 @@
         display: none;
     }
 }
-
+@media (max-width: 768px) {
+  .hero {
+    gap: 1.25rem; /* Increase hero internal gaps */
+  }
+  .hero-actions {
+    margin-bottom: 1.5rem; /* Extra space below button */
+  }
+  #clientschooseus {
+    margin-top: 3rem; /* Push section down on mobile */
+    padding-top: 1.5rem; /* Add internal padding if needed */
+  }
+  section {
+    margin-bottom: 3rem; /* Global section increase for mobile */
+  }
+}
   </style>
 </head>
 <body>
@@ -1008,3 +1022,4 @@ function scrollToSection(id) {
   </script>
 </body>
 </html>
+
