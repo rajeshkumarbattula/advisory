@@ -839,19 +839,20 @@
         <article class="card card-split">
           <div class="card-split-main">
             <div class="card-header">
-              <div class="card-kicker">Monitoring</div>
-              <h3 class="card-title">Reporting &amp; Digital Tracking</h3>
+              <div class="card-kicker">Property Management</div>
+              <h3 class="card-title">Your Property - Our Responsibility</h3>
             </div>
             <div class="card-body">
-              Structured digital dashboards with photo documentation, site notes and alerts at each key milestone to ensure time, cost and quality targets are maintained.
+              We will take full responsibility for managing your flat, house, or plot—from renting out the property to handling major repair works. For plots, we will ensure regular monitoring through scheduled site visits as well as online tools, providing consistent updates so you can stay informed while focusing on your own work and priorities.
             </div>
           </div>
           <div class="card-split-side">
             <span class="meta-pill">Ideal for NRI owners &amp; investors</span>
             <ul class="card-list" style="margin-top: 0.35rem;">
               <li>Weekly or milestone-based visit schedules</li>
-              <li>Transparent progress and variance reporting</li>
-              <li>Independent quality checks at each stage</li>
+			  <li>You will no longer be disturbed for minor issues such as tap repairs or water-related problems. We will act as the single point of contact and handle all such matters on your behalf.</li>
+			  <li>Rental amounts will be quoted and settled in your local currency.</li>
+			  <li>All applicable taxes and utility payments (municipal, water, electricity, etc.) will be handled by us in a timely manner, so you do not need to worry about international transactions.</li>
             </ul>
           </div>
         </article>
@@ -979,7 +980,10 @@
       } else if (type === 'monitoring') {
         titleEl.textContent = 'Monitoring';
         contentEl.innerHTML = `
-          <p>Expert engineers monitor quality, timeline, and budget compliance with detailed reports.</p>
+          <p><li>Expert engineers monitor quality, timeline, and budget compliance with detailed reports.</li>
+		      <li>Transparent progress and variance reporting</li>
+              <li>Independent quality checks at each stage</li>
+		  </p>
         `;
       } else if (type === 'execution') {
         titleEl.textContent = 'Execution';
@@ -1023,4 +1027,5 @@ function scrollToSection(id) {
   </script>
 </body>
 </html>
+
 
