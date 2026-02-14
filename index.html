@@ -702,11 +702,11 @@
         <div>
 	<div class="row">
 	<div class="contact-left">
-	 	<a class="whatsapp-link"  href="tel:+919949809012" style="text-align: left;">
+	 	<a class="whatsapp-link"  href="tel:+917670809012" style="text-align: left;">
 		<img src="Images\phone-call.png" alt="Call" width="20" height="20"> : +91-76 70 80 90 12</a>
 	</div>
 	<div class="contact-right">
-	    	<a class="whatsapp-link" href="https://wa.me/919949809012" target="_blank" rel="noopener"   style="margin-left: auto;  text-align: right;">
+	    	<a class="whatsapp-link" href="https://wa.me/917670809012" target="_blank" rel="noopener"   style="margin-left: auto;  text-align: right;">
 		<img src="Images\whatsapp.png" alt="WhatsApp" width="20" height="20"> : +91-76 70 80 90 12</a>
 	</div>
 	</div>
@@ -718,7 +718,11 @@
           <div class="hero-list">
           <span class="badge">Construction Advisory</span>
           <span class="badge">Property Management</span>
-          <span class="badge">Plots for Sale</span> 
+          <span class="badge">Open Plots</span> 
+          <span class="badge">Interiors</span> 
+          <span class="badge">Flat / House Construction / Monitoring</span>
+          <span class="badge">Venture Development</span>
+          <span class="badge">Material Supply</span>
           </div>
           <div class="hero-actions">
             <button class="btn-primary" onclick="document.getElementById('cta-form').scrollIntoView({ behavior: 'smooth' })">
@@ -739,11 +743,13 @@
   		<ul class="menu-list">
    	<li class="menu-item"><a class="menu-link" href="#valuation" onclick="scrollToSection('valuation'); toggleMenu();">Valuation</a></li>
     	<li class="menu-item"><a class="menu-link" href="#monitoring" onclick="scrollToSection('monitoring'); toggleMenu();">Monitoring</a></li>
-    	<li class="menu-item"><a class="menu-link" href="#execution" onclick="scrollToSection('execution'); toggleMenu();">Execution</a></li>
-    	<li class="menu-item"><a class="menu-link" href="#supply" onclick="scrollToSection('supply'); toggleMenu();">Supply</a></li>
-    	<li class="menu-item"><a class="menu-link" href="#sustainability" onclick="scrollToSection('sustainability'); toggleMenu();">Sustainability</a></li>
+    	<li class="menu-item"><a class="menu-link" href="#execution" onclick="scrollToSection('execution'); toggleMenu();">Building Construction</a></li>
+    	<li class="menu-item"><a class="menu-link" href="#supply" onclick="scrollToSection('supply'); toggleMenu();">Material Supply</a></li>
+    	<li class="menu-item"><a class="menu-link" href="#sustainability" onclick="scrollToSection('sustainability'); toggleMenu();">Green Building</a></li>
     	<li class="menu-item"><a class="menu-link" href="#survey" onclick="scrollToSection('survey'); toggleMenu();">Survey</a></li>
     	<li class="menu-item"><a class="menu-link" href="#interiors" onclick="scrollToSection('interiors'); toggleMenu();">Interiors</a></li>
+    	<li class="menu-item"><a class="menu-link" href="#PropertyManagement" onclick="scrollToSection('PropertyManagement'); toggleMenu();">Property Management</a></li>
+    	<li class="menu-item"><a class="menu-link" href="#OpenPlots" onclick="scrollToSection('OpenPlots'); toggleMenu();">Open Plots</a></li>
   	</ul>
 	</nav>
 	<!-- Menu overlay -->
@@ -851,7 +857,7 @@ We deliver integrated solutions across flats, plots, houses, and construction pr
         </article>
 
         <!-- Supply -->
-        <article id="supply" class="card">
+        <article id="supply" class="card card-clickable" onclick="openPopup('materialsupply')" >
           <div class="card-header">
             <div class="card-kicker">Supply</div>
             <h3 class="card-title">Building Materials</h3>
@@ -862,7 +868,7 @@ We deliver integrated solutions across flats, plots, houses, and construction pr
         </article>
 
         <!-- Sustainability -->
-        <article id="sustainability" class="card">
+        <article id="sustainability" class="card card-clickable" onclick="openPopup('sustainability')" >
           <div class="card-header">
             <div class="card-kicker">Sustainability</div>
             <h3 class="card-title">Green Building Advisory</h3>
@@ -873,7 +879,7 @@ We deliver integrated solutions across flats, plots, houses, and construction pr
         </article>
 
         <!-- Survey -->
-        <article id="survey" class="card">
+        <article id="survey"  class="card card-clickable" onclick="openPopup('survey')" >
           <div class="card-header">
             <div class="card-kicker">Survey</div>
             <h3 class="card-title">Land Survey &amp; Total Station</h3>
@@ -882,12 +888,7 @@ We deliver integrated solutions across flats, plots, houses, and construction pr
             Total Station surveys for precise boundaries, contours and levels, along with support for government layout approvals.
           </div>
         </article>
-      </div>
-    </section>
-
-    <!-- Detailed Service Cards -->
-    <section>
-      <div class="grid grid-sm-2">
+    
         <article id="interiors" class="card card-split">
           <div class="card-split-main">
             <div class="card-header">
@@ -907,7 +908,7 @@ We deliver integrated solutions across flats, plots, houses, and construction pr
           </div>
         </article>
 
-        <article class="card card-split">
+        <article id="PropertyManagement"  class="card card-split">
           <div class="card-split-main">
             <div class="card-header">
               <div class="card-kicker">Property Management</div>
@@ -931,7 +932,7 @@ We deliver integrated solutions across flats, plots, houses, and construction pr
     </section>
 
     <!-- Partner Ventures -->
-    <section id="ventures">
+    <section id="OpenPlots">
       <div class="section-header">
         <h2 class="section-title">Partner Ventures</h2>
         <p class="section-subtitle">Curated investment and lifestyle opportunities backed by professional oversight.</p>
@@ -940,20 +941,23 @@ We deliver integrated solutions across flats, plots, houses, and construction pr
       <p>We can provide Background verification and registration support for below ventures</p>
 
       <div class="ventures-grid">
-        <div class="venture-card">
-          <div class="venture-title">SVG Flora</div> Forms & Resorts
+	<article id="FarmPlots"  class="card card-split">
+        <div class="venture-card">	
+          <div class="venture-title">SVG Flora Forms & Resorts</div> &ensp;&ensp; Farm plots for sale at Jangaon <br><br>
           <p>
             SVG Flora Farms & Resorts offers a unique blend of farmland investment and resort-style living across 100 acres in Jangaon. With a 5-acre premium resort, modern amenities, and nature-rich surroundings, it’s the perfect choice for peaceful getaways, smart investments, and a wholesome lifestyle.
           </p>
 	<a href="SVG Flora Farms & Resorts Brochure.pdf">click here for Brochure</a>
         </div>
-
+	</article>
+	
         <div class="venture-card">
           <div class="venture-title">Villa plots at Sadasiv pet</div>
           <p>
             Comming Soon...
           </p>
         </div>
+
       </div>
     </section>
 
@@ -1068,6 +1072,27 @@ We deliver integrated solutions across flats, plots, houses, and construction pr
             <li>Executing high-quality construction</li>
             <li>Assisting with the bank loan process</li>
           </ul>
+        `;
+      } else if (type === 'materialsupply') {
+        titleEl.textContent = 'Material Supply';
+        contentEl.innerHTML = `
+
+          <ul>
+            <li>We provide reliable, daily supply of Bhadrachalam sand to Hyderabad, supported by strong tie‑ups with multiple approved sand suppliers across Andhra Pradesh and Telangana.</li>
+            <li>We can arrange and deliver road metal from 6 mm to 300 mm (kankara) as per project requirements.</li>
+            <li>We also supply high‑quality Ready Mix Concrete (RMC) from M10 to M60 grades for residential, commercial, and infrastructure works.</li>
+            <li>In addition, we can provide footpath tiles, drainage pipes, and water supply pipelines along with end‑to‑end installation services.</li>
+          </ul>
+        `;
+      } else if (type === 'sustainability') {
+        titleEl.textContent = 'Green Building Consultation';
+        contentEl.innerHTML = `
+	<p>Our green building advisory focuses on energy‑efficient design, passive cooling strategies, water conservation, and sustainable material selection. We 	analyze potential reductions in electricity consumption, water usage, and carbon footprint, helping you achieve healthier indoor environments and lower 	long‑term operational costs.</p>
+        `;
+      } else if (type === 'survey') {
+        titleEl.textContent = 'Land Survey and Total Station Services';
+        contentEl.innerHTML = `
+	<p>Our survey team uses Total Station and GPS‑based equipment to deliver accurate boundary demarcation, plot measurements, and pillar/column 	positioning. The resulting survey data supports precise layout planning, legal documentation, and construction alignment, reducing disputes 	and rework during execution..</p>
         `;
       }
 
